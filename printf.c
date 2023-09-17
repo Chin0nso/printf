@@ -14,7 +14,7 @@ int character, counter = 0;
 char *string;
 va_list args;
 va_start(args, format);
-while (*format != '0')
+while (*format != '\0')
 {
 if (*format == '%')
 {
