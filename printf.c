@@ -1,3 +1,12 @@
+/**
+  *File: printf.c
+  * _printf: Custom implementation of the printf function.
+  * Author: Opara Vivian and Emmanuel Obiajulu Okoye
+  *
+  * @format: a character string containing format specifiers
+  * @...: variable number of arguments to be formatted
+  * Return: 0
+  */
 #include "main.h"
 int _printf(const char *format, ...)
 {
