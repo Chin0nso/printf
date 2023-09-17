@@ -1,0 +1,17 @@
+# Ignore object files and executables
+*.o
+*.out
+
+#Ignore main.c as instructed by ALX
+main.c
+
+# Ignore any file in a directory named "build"
+/build/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore system-specific files or directories
+.DS_Store
+Thumbs.db
