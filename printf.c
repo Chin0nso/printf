@@ -15,23 +15,23 @@ va_start(args, format);
 
 while (*format)
 {
-if (*format == '%')
-{
-if ((*(format + 1) == 'c' || *(format + 1) == 's' || *(format + 1) == '%'))
+if (*format == '%' && (*(format + 1) == 'c' || *(format + 1) == 's' ||
+*(format + 1) == 'd' || *(format + 1) == 'i' ||
+*(format + 1) == '%'))
 {
 format++;
 if (*format == 'c')
 count += print_char(args);
 else if (*format == 's')
 count += print_str(args);
+else if (*format == 'd' || *format == 'i')
+count += print_int(args);
 else if (*format == '%')
 {
 write(1, "%", 1);
 count++;
 }
 }
-}
-
 else
 {
 write(1, format, 1);
