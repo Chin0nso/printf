@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_char - Print a single character.
  * @args: va_list containing the character to print.
@@ -24,7 +25,7 @@ char *str = va_arg(args, char *);
 int len = 0;
 
 while (str[len])
-    len++;
+len++;
 
 write(1, str, len);
 return (len);
@@ -39,8 +40,8 @@ return (len);
 int print_int(va_list args)
 {
 int num = va_arg(args, int);
-char buffer[12]; 
+char buffer[12];
 int len = sprintf(buffer, "%d", num);
 write(1, buffer, len);
-return len;
+return (len);
 }
