@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * _printf - Custom printf function to handle 'c', 's', and '%'.
  * @format: Format specifier string.
