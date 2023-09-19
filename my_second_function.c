@@ -65,10 +65,3 @@ int print_binary(unsigned int num)
 	}
 	return (printed_c);
 }
-
-
-
-
-
-
-
