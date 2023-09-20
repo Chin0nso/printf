@@ -6,6 +6,7 @@
  *
  * Return: Number of characters printed (excluding null byte).
  */
+int _printf(const char *format, ...);
 int _printf(const char *format, ...)
 {
 va_list args;
@@ -17,7 +18,7 @@ while (*format)
 {
 if (*format == '%' && (*(format + 1) == 'c' || *(format + 1) == 's' ||
 *(format + 1) == 'd' || *(format + 1) == 'i' ||
-*(format + 1) == '%'))
+*(format + 1) == '%' || *(format + 1) == 'b'))
 {
 format++;
 if (*format == 'c')
@@ -30,6 +31,14 @@ else if (*format == '%')
 {
 write(1, "%", 1);
 count++;
+}
+else if (*format == 'b')
+	print_binary(va_arg(args, unsigned int));
+else
+{
+	write(1, "%", 1);
+	write(1, format, 1);
+	count += 2;
 }
 }
 else
