@@ -33,7 +33,7 @@ write(1, "%", 1);
 count++;
 }
 else if (*format == 'b')
-	print_binary(va_arg(args, unsigned int));
+	print_binary(va_arg(args, unsigned int), &count);
 else
 {
 	write(1, "%", 1);

@@ -5,12 +5,11 @@
   *print_binary - convert and print unsigned
   *		  integar in binary
   *@num: number
-  *Return: numbers of characters printed
+  *@count: a pointer
+  *Return: void
   */
-int print_binary(unsigned int num)
+void print_binary(unsigned int num, int *count)
 {
-	int printed_c = 0;
-
 	 unsigned int m = 1u << (sizeof(unsigned int) * 8 - 1);
 
 	 int flag = 0;
@@ -22,15 +21,14 @@ int print_binary(unsigned int num)
 		if (b == '1' || flag)
 		{
 		write(1, &b, 1);
-		printed_c++;
+		(*count)++;
 		flag = 1;
 		}
 		m >>= 1;
 	}
-	if (printed_c == 0)
+	if (*count == 0)
 	{
 		write(1, "0", 1);
-		printed_c++;
+		(*count)++;
 	}
-	return (printed_c);
 }
