@@ -16,12 +16,14 @@ int print_uns(va_list args)
 
 	int c = 0;
 
+	int i = 0;
+	int j = i;
+
 	if (n == 0)
 	{
 		write(1, "0", 1);
 		return (1);
 	}
-	int i = 0;
 
 	while (n > 0)
 	{
@@ -29,7 +31,7 @@ int print_uns(va_list args)
 		n /= 10;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		write(1, &buffer[j], 1);
 		c++;
@@ -50,6 +52,8 @@ int print_octal(va_list args)
 	unsigned int n = va_arg(args, unsigned int);
 	char buffer[20];
 	int c = 0;
+	int i = 0;
+	int j = i;
 
 	if (n == 0)
 	{
@@ -57,15 +61,13 @@ int print_octal(va_list args)
 		return (1);
 	}
 
-	int i = 0;
-
 	while (n > 0)
 	{
 		buffer[i++] = (n % 8) + '0';
 		n /= 8;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		write(1, &buffer[j], 1);
 		c++;
@@ -86,14 +88,14 @@ int print_hex_l(va_list args)
 	unsigned int n = va_arg(args, unsigned int);
 	char buffer[20];
 	int c = 0;
+	int i = 0;
+	int j = i;
 
 	if (n == 0)
 	{
 		write(1, "0", 1);
 		return (1);
 	}
-
-	int i = 0;
 
 	while (n > 0)
 	{
@@ -106,7 +108,7 @@ int print_hex_l(va_list args)
 		n /= 16;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		write(1, &buffer[j], 1);
 		c++;
@@ -127,14 +129,14 @@ int print_hex_u(va_list args)
 	unsigned int n = va_arg(args, unsigned int);
 	char buffer[20];
 	int c = 0;
+	int i = 0;
+	int j = i;
 
 	if (n == 0)
 	{
 		write(1, "0", 1);
 		return (1);
 	}
-
-	int i = 0;
 
 	while (n > 0)
 	{
@@ -147,7 +149,7 @@ int print_hex_u(va_list args)
 		n /= 16;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		write(1, &buffer[j], 1);
 		c++;
